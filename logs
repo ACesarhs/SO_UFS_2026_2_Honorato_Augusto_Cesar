@@ -1,1 +1,463 @@
+vboxuser@so2:~$ cat /tmp/experimentos_longos.txt /tmp/experimentos_curtos.txt /tmp/experimentos_concorrencia.txt /tmp/strace-resumo.txt > /tmp/todos_logs.txt
+cat /tmp/todos_logs.txt
+===== EXPERIMENTO 1: Longa - Processo =====
+Tue Sep 15 10:57:46 PM UTC 2026
+    PID %CPU %MEM   RSS CMD
+  39747  0.3  0.9 37896 /usr/local/bin/ollama serve
+Um processo em Sistemas Operacionais é uma sequência de comandos
+executados por um programa ou aplicação para realizar uma ação específica.
+Esses programas ou aplicações, conhecidos como servidores ou processos,
+executam uma variedade de tarefas, como:
 
+- Executar outros programas ou aplicações;
+- Gerenciar recursos físicos ou de rede;
+- Realizar tarefas administrativas, como gerenciar arquivos ou limpar o
+sistema;
+- Utilizar ferramentas e bibliotecas de software para realizar tarefas
+específicas.
+
+Os processos são executados em segundo plano, sem que os usuários
+percebam, e podem ser divididos em diferentes tipos, como:
+
+- Processos de serviço (ou serviços): Executam tarefas específicas, como
+iniciar ou parar um servidor.
+- Processos de gerenciamento (ou gerenciamento): Gerenciam recursos
+físicos ou de rede, como gerenciar memória ou dispositivos de rede.
+- Processos de rede (ou rede): Executam tarefas em rede, como enviar e
+receber dados.
+- Processos de aplicativos (ou aplicativos): Executam tarefas específicas,
+como gerenciar arquivos ou realizar tarefas administrativas.
+
+Os processos são fundamentais para a operação de sistemas operacionais e
+permitem que os programas ou aplicações realizem suas funções de forma
+eficiente e sem interrupções.
+
+
+real    3m54.635s
+user    0m1.046s
+sys     0m1.524s
+    PID %CPU %MEM   RSS CMD
+  39747  0.4  1.2 48504 /usr/local/bin/ollama serve
+===== EXPERIMENTO 2: Longa - Thread =====
+Tue Sep 15 11:01:41 PM UTC 2026
+Uma thread é um tipo de conexão ou vínculo entre dois pontos em uma rede,
+geralmente usada para transmitir dados ou mensagens entre eles. Em outras
+palavras, uma thread é uma pequena unidade que permite a execução de um
+código ou a transferência de dados entre dois pontos na mesma rede.
+
+Em sistemas operacionais, uma thread é uma unidade de execução
+independente que pode executar um código ou realizar uma tarefa em
+parallelismo com outros threads. Isso permite que mais de uma tarefa
+execute ao mesmo tempo, o que pode melhorar a eficiência e a performance
+do sistema.
+
+Uma thread pode ser usada para:
+
+- Executar código em paralelo: uma thread pode executar um código em tempo
+real, sem interferir com outras tarefas do sistema.
+- Realizar tarefas repetitivas: uma thread pode executar uma tarefa
+repetitiva, como ler e escrever dados em um arquivo, em paralelo com
+outras tarefas.
+- Implementar algoritmos em paralelo: uma thread pode executar um
+algoritmo em paralelo, como a busca em ordem decimal, em múltiplas
+threads.
+
+Em aplicativos, uma thread pode ser usada para:
+
+- Realizar tarefas complexas em paralelo, como a criptografia ou a
+analisagem de imagens.
+- Executar múltiplas tarefas em paralelo, como a execução de um jogo ou
+uma aplicação gráfica.
+- Gerenciar recursos de hardware, como a carga de trabalho em um
+processador.
+
+No contexto da internet, uma thread é usada para transmitir dados entre
+dois pontos na mesma rede. Isso é feito por meio de protocolos de
+comunicação, como TCP/IP, que criam uma conexão entre dois pontos e
+permitem a transferência de dados em paralelo.
+
+Em resumo, uma thread é uma unidade de execução independente que permite a
+execução de código ou a transferência de dados entre dois pontos na mesma
+rede, o que pode melhorar a eficiência e a performance do sistema.
+
+
+real    3m41.523s
+user    0m0.352s
+sys     0m0.666s
+    PID %CPU %MEM   RSS CMD
+  39747  0.4  0.9 38652 /usr/local/bin/ollama serve
+===== EXPERIMENTO 3: Longa - Escalonamento =====
+Tue Sep 15 11:05:22 PM UTC 2026
+O escalonamento de CPU, também conhecido como escalonamento de circuito
+imprimido, é uma técnica de organização e uso eficiente do recurso de
+processamento (CPU) no sistema de computador. No escalonamento, a CPU é
+dividida em um número determinado de blocos ou pacotes, chamados de
+"ciclos", que são usados para realizar tarefas específicas.
+
+Aqui está um resumo de como funciona o escalonamento de CPU:
+
+1.  **Identificação dos ciclos**: O sistema operacional identifica os
+ciclos de CPU disponíveis e o divide em blocos ou pacotes, dependendo da
+complexidade da tarefa e do tempo de execução.
+2.  **Prioridade dos ciclos**: Os ciclos são priorizados com base em sua
+complexidade, tempo de execução e necessidade de recursos, como memória e
+entrada/saída.
+3.  **Organização dos ciclos**: Os ciclos são organizados em um arranjo de
+blocos, onde os ciclos mais urgentes são usados primeiro, seguidos dos
+ciclos mais leves.
+4.  **Uso dos recursos**: Os ciclos são usados para realizar tarefas
+específicas, como processamento de dados, lógica de programação, e até
+mesmo acesso a hardware, como leitor de memória ou dispositivos de saída.
+
+Existem diferentes tipos de escalonamento de CPU, incluindo:
+
+*   **Estrutura de escalonamento**: O sistema operacional escolhe o melhor
+escalonamento de CPU para a tarefa, considerando fatores como
+complexidade, tempo de execução e necessidade de recursos.
+*   **Sistema escalonamento**: O sistema operacional cria um sistema
+escalonamento, que é uma implementação específica do escalonamento de CPU,
+como o Linux ou o Windows.
+
+O escalonamento de CPU tem vários benefícios, incluindo:
+
+*   **Uso eficiente do recurso de processamento**: O escalonamento permite
+que o sistema operacional use o recurso de processamento com eficiência,
+reduzindo o uso de recursos desnecessários.
+*   **Melhoria da performance**: O escalonamento pode melhorar a
+performance do sistema em comparação com o uso direto da CPU.
+*   **Gestão da complexidade**: O escalonamento ajuda a gerenciar a
+complexidade de tarefas, reduzindo o impacto negativo sobre o sistema.
+
+
+real    2m19.938s
+user    0m0.145s
+sys     0m0.212s
+    PID %CPU %MEM   RSS CMD
+  39747  0.4  0.9 39024 /usr/local/bin/ollama serve
+===== EXPERIMENTO 4: Longa - Memória virtual =====
+Tue Sep 15 11:07:42 PM UTC 2026
+A memória virtual é um conceito que se refere à capacidade de armazenar e
+acessar informações e dados em um ambiente virtual, simulação ou modelo de
+realidade. Essas informações podem ser usadas para fins educacionais, de
+treinamento, pesquisa e até mesmo para criar experiências imersivas e
+interativas.
+
+Uma memória virtual é uma forma de armazenamento e manipulação de dados
+que permite que os usuários acessem e manipulem informações de uma maneira
+mais aguçada e eficaz. Isso é possível graças à tecnologia de computação
+avançada, que permite a criação de simulações e modelos de realidade
+virtuais.
+
+A memória virtual é usada em diversas áreas, incluindo educação,
+treinamento e desenvolvimento de software. Por exemplo, em cursos online,
+a memória virtual pode ser usada para criar experiências de aprendizado
+mais imersivas e interativas. Além disso, a memória virtual pode ser usada
+em simulações de laboratório para modelos científicos e técnicos.
+
+A memória virtual também tem aplicações em áreas como a medicina, onde
+pode ser usada para criar modelos de simulação de organos e sistemas
+humanos, permitindo que os médicos testem a eficácia de novas terapias e
+tratamentos. Além disso, a memória virtual pode ser usada em áreas como a
+financeira, onde pode ser usada para criar modelos de previsão de risco e
+oportunidade.
+
+No entanto, a memória virtual também apresenta desafios, como a
+privacidade e a segurança dos dados armazenados. Além disso, a memória
+virtual pode ser percebida como uma alternativa ao papel tradicional de
+memória física, o que pode levantar questões sobre a natureza da realidade
+e a sua relevância para a nossa experiência humana.
+
+Em resumo, a memória virtual é uma tecnologia que permite a criação de
+simulações e modelos de realidade virtuais, usados em diversas áreas,
+incluindo educação, treinamento, desenvolvimento de software e medicina.
+Embora apresente desafios, a memória virtual tem potencial para criar
+experiências imersivas e interativas, e pode ser uma ferramenta valiosa
+para o desenvolvimento de novas tecnologias e aplicativos.
+
+**Conclusão**
+
+A memória virtual é uma tecnologia que está revolucionando a forma como
+entendemos a memória e a experiência humana. Com a capacidade de armazenar
+e acessar informações e dados de uma maneira mais aguçada e eficaz, a
+memória virtual tem o potencial de criar experiências imersivas e
+interativas que podem ser mais eficazes e eficientes. No entanto, é
+fundamental considerar os desafios e limitações dessa tecnologia, bem como
+as implicações éticas e sociais que podem surgir de sua implementação.
+
+
+real    3m0.047s
+user    0m0.114s
+sys     0m0.232s
+    PID %CPU %MEM   RSS CMD
+  39747  0.4  0.9 38876 /usr/local/bin/ollama serve
+===== EXPERIMENTO 5: Curta - Oi =====
+What's up?
+
+
+real    0m2.031s
+user    0m0.029s
+sys     0m0.042s
+===== EXPERIMENTO 6: Curta - Tudo bem =====
+Sto tudo bem, o que você está fazendo aqui parece estar funcionando sem
+problemas! Você está se sentindo bem ou precisa de alguma ajuda em
+particular?
+
+
+real    0m7.535s
+user    0m0.017s
+sys     0m0.054s
+===== EXPERIMENTO 7: Curta - Capital =====
+A capital do Brasil é Brasília.
+
+
+real    0m3.210s
+user    0m0.031s
+sys     0m0.025s
+===== EXPERIMENTO 8: Curta - Ok =====
+Desculpe, mas não posso atender a esse pedido. Posso ajudar com outra
+coisa?
+
+
+real    0m9.284s
+user    0m0.016s
+sys     0m0.048s
+===== EXPERIMENTO 9: Concorrência - 2 prompts =====
+
+⠙
+⠴
+
+Posso fornecer informações e entretenimento sobre uma variedade de
+tópicos. Como posso ajudá-lo hoje?
+
+
+real    0m17.345s
+user    0m0.185s
+sys     0m0.418s
+===== EXPERIMENTO 10: Concorrência - 2 prompts =====
+⠹
+
+
+⠏ .
+
+⠦
+⠧ :
+
+⠙ **
+
+⠇
+⠙
+⠸
+⠇ .
+
+⠙ utura
+⠼ .
+⠼
+
+⠇ ".
+
+⠦ **
+
+
+⠇ .
+
+⠇ .
+
+⠼ .
+
+⠏ **
+
+
+⠇ .
+⠸
+⠋ .
+⠙
+⠏ .
+
+⠏ **
+
+⠙
+⠹ .
+
+⠹ .
+
+⠧ .
+
+⠙
+⠙
+⠋
+
+O CPU, ou Central Processador, é o coração da máquina de computador. Ele é
+responsável por executar as instruções que você digere e que a computadora
+precisa realizar. Aqui está uma explicação mais detalhada sobre como
+funciona o CPU:
+
+**Quando o CPU é ativado**
+
+Quando você presiona o botão de início da computadora, o CPU é ativado.
+Ele começa a funcionar e a receber as instruções de que você digere.
+
+**Funções do CPU**
+
+O CPU tem várias funções principais:
+
+1. **Execução das instruções**: O CPU executa as instruções que você
+digere, lendo as informações de memória e armazenando as respostas.
+2. **Manipulação de dados**: O CPU manipula os dados que você lida, como
+números, letras e imagens.
+3. **Armazenamento de dados**: O CPU armazena os dados que você lida em
+memória.
+4. **Controle de fluxo**: O CPU controla o fluxo de trabalho, executando
+as instruções corretamente e garantindo que o processamento seja seguro e
+eficiente.
+
+**Características do CPU**
+
+O CPU tem várias características importantes:
+
+1. **Processador Intel** (por exemplo, Intel Core i5 ou i7): O processador
+Intel é uma das mais populares e eficientes do mercado.
+2. **Arquitectura**: A arquitectura do CPU determina como o processador
+funciona, como o número de cores e a velocidade.
+3. **Velocidade**: A velocidade do CPU determina como rápido ele pode
+processar instruções.
+4. **Armazenamento**: O CPU tem armazenamento cache para alocar instruções
+e dados rapidamente.
+
+**Tipos de CPU**
+
+Existem vários tipos de CPUs, incluindo:
+
+1. **CPU on-die**: O CPU é fabricado dentro da mesma placa de circuitos
+integrados (PCI) que a máquina de computador.
+2. **CPU em uma placa**: O CPU está em uma placa separada, geralmente com
+um processador de vídeo.
+3. **CPU com um processador de vídeo**: O CPU tem um processador de vídeo
+integrado, o que significa que o processador Intel, por exemplo, tem uma
+parte especializada para gerenciar o processamento de vídeo.
+
+**Limitações do CPU**
+
+O CPU tem algumas limitações importantes:
+
+1. **Velocidade**: A velocidade do CPU pode ser limitada pela velocidade
+do processador de vídeo e da placa de circuitos integrados.
+2. **Armazenamento**: O CPU tem armazenamento cache limitado, o que
+significa que ele pode precisar de tempo para armazenar dados.
+3. **Complexidade**: O CPU é um dispositivo complexo que requer manutenção
+e atualizações regulares.
+
+Em resumo, o CPU é o coração da máquina de computador, responsável por
+executar as instruções e realizar o processamento de dados. Ele tem várias
+funções principais, como executar instruções, manipular dados, armazenar
+dados e controlar o fluxo de trabalho. Além disso, o CPU tem
+características importantes, como processador Intel, arquitectura,
+velocidade e armazenamento. No entanto, o CPU também tem limitações, como
+velocidade, armazenamento e complexidade.
+
+
+real    6m17.895s
+user    0m0.401s
+sys     0m1.146s
+===== EXPERIMENTO 11: Concorrência - 2 prompts =====
+
+
+⠴
+⠦
+
+Um semáforo é um dispositivo mecânico ou eletrônico projetado para
+controlar a circulação de veículos em uma via, garantindo que eles possam
+passar uns dos outros de acordo com a ordem lógica. É como um controle de
+saída, onde os veículos esperam em uma estátua de pé até que os caminhões
+passarem.
+
+Os semáforos são usados em muitas cidades para controlar a circulação de
+tráfego, especialmente em áreas com alta velocidade ou em locais de grande
+movimentação. Eles funcionam de forma automática, permitindo que os
+veículos se movam em uma ordem lógica, mantendo a segurança e a eficiência
+na circulação.
+
+Os principais componentes de um semáforo incluem:
+
+* Uma câmera para monitorar a movimentação dos veículos
+* Alguns algoritmos para calcular a ordem de passagem
+* Alguns mecanismos de controle de saída para lidar com acidentes ou
+engajos
+* Uma rede de sensores para monitorar a velocidade e a distância dos
+veículos
+
+Os semáforos são uma ferramenta essencial para a segurança e eficiência da
+circulação de tráfego, e são amplamente utilizados em muitas cidades ao
+redor do mundo.
+
+
+real    1m26.712s
+user    0m0.099s
+sys     0m0.296s
+===== EXPERIMENTO 12: Concorrência - 2 prompts =====
+
+
+⠦
+
+⠇
+
+Swapping é um conceito matemático que se refere a uma transação em que
+duas variáveis são trocadas, mas não é necessariamente semelhante ao
+swapping de dados em programação. Em programação, o swapping de dados
+envolve a troca de valores de duas variáveis, enquanto em matemática, o
+swapping envolve a troca de valores de duas expressões ou valores de duas
+variáveis.
+
+Nesse contexto, o swapping envolve a permutação ou a reordenação dos
+elementos de uma sequência ou de dois valores. Por exemplo, se você tiver
+um array de números e quiser ordená-los, o swapping envolve a troca de
+cada elemento com o elemento após ele, de forma que os números sejam
+ordenados de forma crescente.
+
+Exemplos de swapping matemático incluem:
+
+* Ordenar um array de números em crescimento: (a, b, c, ... , e) -> (a, b,
+c, ... , e)
+* Ordenar um conjunto de números em decrescente: [3, 1, 2, 4] -> [2, 4, 1,
+3]
+* Ordenar um array de frutas em ordem alfabética: ( maçã, banana, kiwi,
+... , uva) -> (banana, kiwi, maçã, ... , uva)
+
+No entanto, é importante notar que o swapping matemático não é uma
+operação semelhante ao swapping de dados em programação, que envolve a
+troca de valores de duas variáveis, e não tem o mesmo significado.
+
+
+real    1m46.667s
+user    0m0.762s
+sys     0m1.058s
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ------------------
+ 49.38    0.191239        1375       139         4 futex
+ 17.93    0.069456         270       257           nanosleep
+ 17.75    0.068727        1126        61           epoll_pwait
+  2.16    0.008354         309        27           write
+  1.71    0.006624         135        49        16 read
+  1.57    0.006096          89        68           fcntl
+  1.53    0.005937         144        41           madvise
+  1.19    0.004622         200        23           close
+  1.00    0.003861         214        18        11 rt_sigreturn
+  0.72    0.002778         213        13           sched_yield
+  0.72    0.002776         120        23           newfstatat
+  0.64    0.002476         137        18           getpid
+  0.60    0.002337         467         5         5 connect
+  0.59    0.002280          95        24           getdents64
+  0.55    0.002125          70        30           setsockopt
+  0.48    0.001844         102        18           tgkill
+  0.47    0.001837          63        29        17 epoll_ctl
+  0.39    0.001513          89        17           openat
+  0.20    0.000773         773         1           restart_syscall
+  0.12    0.000475          95         5           getpeername
+  0.12    0.000456          91         5           socket
+  0.11    0.000429          85         5           fstat
+  0.03    0.000129          25         5           getsockopt
+  0.02    0.000069          11         6           getsockname
+  0.01    0.000042          21         2         1 accept4
+  0.01    0.000021          10         2           pread64
+  0.00    0.000018           9         2           sched_getaffinity
+------ ----------- ----------- --------- --------- ------------------
+100.00    0.387294         433       893        54 total
