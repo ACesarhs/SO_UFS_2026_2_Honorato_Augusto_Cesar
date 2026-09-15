@@ -1,4 +1,4 @@
-# 📘 Atividade AV1 — Sistemas Operacionais
+# 📘 Atividade 1 — Sistemas Operacionais
 ## IA Generativa Local com Ollama + Open WebUI
 
 **Discente:** Augusto César Honorato dos Santos  
@@ -11,7 +11,7 @@
 
 ## 🎯 Sobre a atividade
 
-Este repositório reúne os artefatos da Atividade AV1 da disciplina de Sistemas Operacionais. O objetivo é instalar, executar e **observar** uma aplicação local de IA generativa baseada em Ollama, medindo o impacto de diferentes configurações sobre processos, threads, CPU, memória e chamadas de sistema.
+Este repositório reúne os artefatos da Atividade 1 da disciplina de Sistemas Operacionais. O objetivo é instalar, executar e **observar** uma aplicação local de IA generativa baseada em Ollama, medindo o impacto de diferentes configurações sobre processos, threads, CPU, memória e chamadas de sistema.
 
 **Pergunta norteadora:** como a camada de aplicação, o modelo, a quantização e a configuração de execução afetam processos, threads, uso de CPU, memória e responsividade de um sistema local de IA generativa?
 
