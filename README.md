@@ -173,30 +173,6 @@ Foram realizadas **12 execuções mensuráveis**, divididas em 3 configurações
 
 ---
 
-## 📂 Estrutura do repositório
-
-```
-SO_UFS_2026_2_Honorato_Augusto_Cesar/
-├── README.md
-├── VIDEO.md
-├── relatorio/
-│   └── Relatorio_AV1_Augusto_Cesar.pdf
-├── logs/
-│   └── todos_logs.txt
-├── evidencias/
-│   └── (prints de top, strace, docker, ollama)
-└── scripts/
-    └── (comandos usados)
-```
-
----
-
-## 🎥 Vídeo da atividade
-
-📺 **[Assista ao vídeo de apresentação](LINK_DO_VIDEO_AQUI)**
-
----
-
 ## ⚠️ Limitações observadas
 
 1. RAM muito baixa (3,8 GB) e ausência de GPU dedicada.
