@@ -1,75 +1,62 @@
+# Scripts
+
+## inventario.sh
+
+```bash
 #!/bin/bash
-# ============================================================
-# Scripts usados nos experimentos da AV1
-# Disciplina: Sistemas Operacionais — UFS 2026.2
-# Discente: Augusto César Honorato dos Santos
-# ============================================================
-
-# ------------------------------------------------------------
-# INVENTÁRIO DO AMBIENTE
-# Coleta informações básicas sobre o sistema onde os testes
-# foram executados.
-# ------------------------------------------------------------
-
-# Mostra informações do kernel e da arquitetura do sistema
 uname -a
-
-# Exibe a distribuição Linux e sua versão (ex: Ubuntu 24.04.2)
 cat /etc/os-release
-
-# Lista detalhes da CPU: modelo, núcleos, threads, cache, etc.
 lscpu
-
-# Mostra o uso de memória RAM e swap em formato legível (-h)
 free -h
-
-# Exibe o número de núcleos de CPU disponíveis
 nproc
-
-# Mostra o uso do disco em formato legível (-h)
 df -h
-
-# Exibe a versão do Ollama instalada
 ollama --version
-
-# Lista todos os modelos baixados no Ollama
 ollama list
+```
 
-# ------------------------------------------------------------
-# PROCESSOS E THREADS
-# Identifica os processos e threads do Ollama em execução.
-# ------------------------------------------------------------
+## processos_threads.sh
 
-# Lista todos os processos do sistema e filtra os que contêm "ollama"
-# Mostra PID, PPID, usuário, comando, etc.
+```bash
+#!/bin/bash
 ps -ef | grep ollama
-
-# Lista processos E suas threads (-L), em formato completo (-f)
-# Revela quantas threads cada processo do Ollama possui
 ps -eLf | grep ollama
+```
 
-# ------------------------------------------------------------
-# CHAMADAS DE SISTEMA (STRACE)
-# Analisa quais syscalls o processo do Ollama executa.
-# ------------------------------------------------------------
+## strace.sh
 
-# Anexa o strace ao processo do Ollama (encontrado via pgrep)
-# -f: segue processos filhos (threads)
-# -c: gera um resumo (contagem de chamadas por tipo)
-# -p: anexa ao PID especificado
-# -o: salva a saída no arquivo /tmp/strace-resumo.txt
-# O pgrep -f "ollama serve" encontra o PID do processo principal
+```bash
+#!/bin/bash
 sudo strace -f -c -p $(pgrep -f "ollama serve") -o /tmp/strace-resumo.txt
+```
 
-# ------------------------------------------------------------
-# EXPERIMENTOS DE INFERÊNCIA
-# Mede o tempo de execução de requisições ao modelo.
-# ------------------------------------------------------------
+## experimentos.sh
 
-# time: mede o tempo real, de usuário e de sistema do comando
-# ollama run: envia um prompt ao modelo especificado
-# Teste 1: prompt longo (explicação técnica) — deve demorar mais
+```bash
+#!/bin/bash
 time ollama run llama3.2:1b "Explique o que é um processo em Sistemas Operacionais."
-
-# Teste 2: prompt curto (saudação) — deve demorar menos
+time ollama run llama3.2:1b "O que é uma thread?"
+time ollama run llama3.2:1b "Explique escalonamento de CPU."
+time ollama run llama3.2:1b "Escreva um resumo de 300 palavras sobre memória virtual."
 time ollama run llama3.2:1b "Oi"
+time ollama run llama3.2:1b "Tudo bem?"
+time ollama run llama3.2:1b "Qual a capital do Brasil?"
+time ollama run llama3.2:1b "Diga apenas: ok"
+```
+
+## concorrencia.sh
+
+```bash
+#!/bin/bash
+time (ollama run llama3.2:1b "Explique threads" & ollama run llama3.2:1b "Explique processos" & wait)
+time (ollama run llama3.2:1b "Explique memória" & ollama run llama3.2:1b "Explique CPU" & wait)
+time (ollama run llama3.2:1b "O que é deadlock?" & ollama run llama3.2:1b "O que é semáforo?" & wait)
+time (ollama run llama3.2:1b "O que é paginação?" & ollama run llama3.2:1b "O que é swapping?" & wait)
+```
+
+## logs.sh
+
+```bash
+#!/bin/bash
+cat /tmp/experimentos_longos.txt /tmp/experimentos_curtos.txt /tmp/experimentos_concorrencia.txt /tmp/strace-resumo.txt > /tmp/todos_logs.txt
+cat /tmp/todos_logs.txt
+```
